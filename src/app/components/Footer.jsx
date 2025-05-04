@@ -19,7 +19,7 @@ export default function Footer() {
                 <line x1="8" y1="21" x2="16" y2="21"></line>
                 <line x1="12" y1="17" x2="12" y2="21"></line>
               </svg>
-              <span>ResumeAI</span>
+              <span>AM-IN</span>
             </div>
             <p className="text-gray-400 mb-6">
               AI-powered resume analysis and feedback specifically designed for

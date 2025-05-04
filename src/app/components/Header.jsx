@@ -26,7 +26,7 @@ const Header = ({ className = "" }) => {
               <line x1="8" y1="21" x2="16" y2="21"></line>
               <line x1="12" y1="17" x2="12" y2="21"></line>
             </svg>
-            <span>ResumeAI</span>
+            <span>AM-IN</span>
           </Link>
           <div className="hidden md:flex items-center space-x-8">
             <Link
