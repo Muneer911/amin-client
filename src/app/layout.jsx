@@ -1,4 +1,4 @@
-import { Geist } from "geist/font";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -8,7 +8,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={``}>{children}</body>
+      <body className={``}>
+        {children}
+        <Footer></Footer>
+      </body>
     </html>
   );
 }
