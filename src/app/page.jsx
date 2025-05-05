@@ -13,7 +13,7 @@ export default function Home() {
         <main className="min-h-screen bg-white">
           <Header />
           <Body />
-          <Footer />
+
           {/* Rest of your page content */}
         </main>
       </Suspense>
