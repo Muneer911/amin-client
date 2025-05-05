@@ -1,4 +1,8 @@
-@layer base {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base {
   html {
     @apply scroll-smooth;
   }
@@ -24,4 +28,4 @@
   .container {
     @apply mx-auto px-4 md:px-8 max-w-7xl;
   }
-}
+} */
