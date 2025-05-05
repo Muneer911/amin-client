@@ -27,90 +27,39 @@ export default function SignUp() {
       [name]: type === "checkbox" ? checked : value,
     });
 
-    // Clear error when field is edited
-    if (errors[name]) {
-      setErrors({
-        ...errors,
-        [name]: null,
-      });
-    }
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-  const validateForm = () => {
-    const newErrors = {};
 
-    if (!formData.firstName.trim()) {
-      newErrors.firstName = "First name is required";
-    }
+  //   setIsLoading(true);
+  //   try {
+  //     // Replace this with axios 
+  //     // const response = await fetch('/api-signup', {
+  //     //   method: 'POST',
+  //     //   headers: { 'Content-Type': 'application/json' },
+  //     //   body: JSON.stringify(formData)
+  //     // });
 
-    if (!formData.lastName.trim()) {
-      newErrors.lastName = "Last name is required";
-    }
+  //     // if (!response.ok) throw new Error('Registration failed');
+  //     // const data = await response.json();
 
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
-    }
+  //     // Simulate API call for now
+  //     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    if (!formData.password) {
-      newErrors.password = "Password is required";
-    } else if (formData.password.length < 8) {
-      newErrors.password = "Password must be at least 8 characters";
-    } else if (!/(?=.*\d)(?=.*[!@#$%^&*])/.test(formData.password)) {
-      newErrors.password =
-        "Password must contain a number and special character";
-    }
+  //     // Handle successful registration
+  //     // router.push("/onboarding");
+  //   } catch (error) {
+  //     console.error("Registration error:", error);
+  //     // Handle error - show notification, etc.
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
-    if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = "Passwords do not match";
-    }
-
-    if (!formData.acceptTerms) {
-      newErrors.acceptTerms = "You must accept the terms and conditions";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      // Replace with your actual registration API call
-      // const response = await fetch('/api/auth/signup', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // });
-
-      // if (!response.ok) throw new Error('Registration failed');
-      // const data = await response.json();
-
-      // Simulate API call for now
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      // Handle successful registration
-      // router.push("/onboarding");
-    } catch (error) {
-      console.error("Registration error:", error);
-      // Handle error - show notification, etc.
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleSocialSignUp = (provider) => {
-    // Implement social sign-up logic here
-    console.log(`Signing up with ${provider}`);
-  };
+  // const handleSocialSignUp = (provider) => {
+  //   // social sign-up logic 
+  //   console.log(`Signing up with ${provider}`);
+  // };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
