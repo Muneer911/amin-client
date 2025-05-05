@@ -11,10 +11,7 @@ export default function Home() {
     <ErrorBoundary>
       <Suspense fallback={<Loading />}>
         <main className="min-h-screen bg-white">
-          <Header />
           <Body />
-
-          {/* Rest of your page content */}
         </main>
       </Suspense>
     </ErrorBoundary>
