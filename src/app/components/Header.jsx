@@ -43,6 +43,12 @@ const Header = ({ className = "" }) => {
             >
               Pricing
             </Link>
+            <Link
+              className="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-lg inline-block transition-colors"
+              href="/signin"
+            >
+              Sign in
+            </Link>
           </div>
         </nav>
       </div>
