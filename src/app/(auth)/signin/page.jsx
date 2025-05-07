@@ -26,14 +26,14 @@ export default function SignUp() {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
+  };
 
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
 
-
   //   setIsLoading(true);
   //   try {
-  //     // Replace this with axios 
+  //     // Replace this with axios
   //     // const response = await fetch('/api-signup', {
   //     //   method: 'POST',
   //     //   headers: { 'Content-Type': 'application/json' },
@@ -57,7 +57,7 @@ export default function SignUp() {
   // };
 
   // const handleSocialSignUp = (provider) => {
-  //   // social sign-up logic 
+  //   // social sign-up logic
   //   console.log(`Signing up with ${provider}`);
   // };
 
@@ -65,7 +65,8 @@ export default function SignUp() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8 my-12">
         <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
-        <form onSubmit={handleSubmit} className="space-y-5">
+        {/* Form submission temporarily disabled until handleSubmit is implemented */}
+        <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label
@@ -225,7 +226,7 @@ export default function SignUp() {
           )}
 
           <button
-            type="submit"
+            type="button"
             disabled={isLoading}
             className="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-4 py-3 rounded-lg transition-colors flex justify-center items-center"
           >
@@ -267,27 +268,36 @@ export default function SignUp() {
           <div className="grid grid-cols-2 gap-4">
             <button
               type="button"
-              onClick={() => handleSocialSignUp("facebook")}
-              className="flex justify-center items-center px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+              disabled
+              className="flex justify-center items-center px-4 py-3 border border-gray-300 rounded-lg opacity-50 cursor-not-allowed"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-2"
                 viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                className="h-5 w-5 mr-2"
+                aria-labelledby="title"
+                aria-describedby="desc"
+                role="img"
               >
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                <title>Github</title>
+                <desc>A solid styled icon from Orion Icon Library.</desc>
+                <path
+                  data-name="layer2"
+                  d="M12 0a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9a4.6 4.6 0 0 1 1.2-3.2 4.5 4.5 0 0 1 .1-3.2s1-.3 3.3 1.3a11.6 11.6 0 0 1 3-.4 11.6 11.6 0 0 1 3 .4c2.3-1.6 3.3-1.3 3.3-1.3a4.5 4.5 0 0 1 .1 3.2 4.6 4.6 0 0 1 1.2 3.2c0 4.6-2.8 5.6-5.5 5.9a5 5 0 0 1 1.5 3.7v5.5c0 .3.2.7.8.6A12 12 0 0 0 12 0z"
+                  fill="#202020"
+                />
+                <path
+                  data-name="layer1"
+                  d="M4.5 17.2c-.1.1-.2.1-.2 0s-.1-.1-.1-.2.1-.1.2 0c.1.1.1.2.1.2zm.5.6a.2.2 0 0 1-.3-.3.2.2 0 0 1 .3 0 .2.2 0 0 1 0 .3zm.5.7a.2.2 0 0 1-.3-.1.2.2 0 0 1 0-.3.2.2 0 0 1 .3.1c.1.1.1.3 0 .3zm.6.7c-.1.1-.2 0-.3-.1-.1-.1-.1-.2 0-.3a.2.2 0 0 1 .3.1c.1.1.1.3 0 .3zm.9.4c0 .1-.1.2-.3.1s-.2-.1-.2-.3.1-.1.3-.1c.1 0 .2.1.2.3zm1 .1c0 .1-.1.2-.3.2s-.3-.1-.3-.2.1-.2.3-.2c.2 0 .3.1.3.2zm.9-.1c0 .2-.1.3-.2.2a.3.3 0 0 1-.3-.1c0-.2.2-.2.2-.2.2 0 .3.1.3.1z"
+                  fill="#202020"
+                />
               </svg>
-              <span className="text-sm font-medium">Facebook</span>
+              <span className="text-sm font-medium">GitHub</span>
             </button>
             <button
               type="button"
-              onClick={() => handleSocialSignUp("google")}
-              className="flex justify-center items-center px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+              disabled
+              className="flex justify-center items-center px-4 py-3 border border-gray-300 rounded-lg opacity-50 cursor-not-allowed"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
